@@ -1,0 +1,28 @@
+<!doctype html>
+<title>Robotes Robot Kontrol</title>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='jquery-ui.css') }}">
+    <script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
+
+    <script type=text/javascript src="{{url_for('static', filename='jquery-ui.js') }}"></script>
+
+
+
+<div class=page>
+    <div class=header>
+  <h1>Robotes Robot Kontrol Arayuzu</h1>
+    </div>
+
+    <ul class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/motor/">Motors</a></li>
+        <li><a href="/sequence/">Sequence</a></li>
+        <li><a href="/settings/">Settings</a></li>
+        <li><a href="/about/">About</a></li>
+    </ul>
+
+  {% block head %}{% endblock %}
+  {% block body %}{% endblock %}
+</div>

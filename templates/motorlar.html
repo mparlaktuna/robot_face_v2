@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block head %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="/resources/demos/external/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='jquery-ui.css') }}">
+    <script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
+
+    <script type=text/javascript src="{{url_for('static', filename='jquery-ui.js') }}"></script>
+
+    <script>
+        $(function() {
+            $( "#spinner1, #spinner2" ).spinner({
+                step: 10,
+                spin: function( event, ui ) {
+
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    <div class=motor_table>
+  <table class="center" border="1" style="width:1000px">
+          <tr>
+              <td>Motor Name</td>
+              <td>Current Position</td>
+              <td>Min Limit</td>
+              <td>Max Limit</td>
+
+          </tr>
+          <form action="/motorlar", method="POST">
+              {% for entry in entries %}
+                  <tr>
+                      <td>{{ entry.motor_name }} </td>
+                      <td> <input id="spinner1"  name="spinner1" + {{ entry.motor_number }} value={{ entry.goal_position }}></td>
+                      <td>{{ entry.min_limit|safe }}</td>
+                      <td>{{ entry.max_limit|safe }}</td>
+                  </tr>
+              {% else %}
+                  <li><em>Hic motor eklenmemis, lutfen motor ekleyin</em>
+              {% endfor %}
+              </tr
+          </form>
+  </table>
+    </div>
+{% endblock %}

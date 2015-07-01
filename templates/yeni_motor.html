@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form method="POST", action="/yeni_motor">
+        <dl>{{ form.name.label }} {{ form.name() }} </dl>
+        <dl>{{ form.number.label }} {{ form.number() }}</dl>
+        <dl>{{ form.min_limit.label }} {{ form.min_limit() }}</dl>
+        <dl>{{ form.max_limit.label }} {{ form.max_limit() }}</dl>
+        <dl>{{ form.speed.label }} {{ form.speed() }}</dl>
+        <input type="submit" value="Motor Ekle">
+    </form>
+{% endblock %}

@@ -1,0 +1,5 @@
+0 right_eye 1400 200 1000
+1 left_eye 1000 200 1000
+2 eye_pitch 1200 200 1000
+3 right_eyelid 1200 200 1000
+4 left_eyelid 1200 200 1000
